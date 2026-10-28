@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secuencias - Mente Activa</title>
+
+    <!-- Estilos generales (subimos dos carpetas con ../../) -->
+    <link rel="stylesheet" href="../../css/estilos.css">
+    <!-- Estilos propios de este juego -->
+    <link rel="stylesheet" href="secuencias.css">
+</head>
+<body>
+
+    <header class="encabezado encabezado-secuencias">
+        <h1>Secuencias</h1>
+        <p>Observa la secuencia y repítela en el mismo orden</p>
+    </header>
+
+    <main class="contenedor">
+
+        <!-- Marcador: nivel, ronda y aciertos -->
+        <section class="marcador">
+            <div class="dato">
+                <span class="dato-titulo">Nivel</span>
+                <span id="texto-nivel" class="dato-valor">1 / 3</span>
+            </div>
+            <div class="dato">
+                <span class="dato-titulo">Ronda</span>
+                <span id="texto-ronda" class="dato-valor">1 / 3</span>
+            </div>
+            <div class="dato">
+                <span class="dato-titulo">Aciertos</span>
+                <span id="texto-aciertos" class="dato-valor">0</span>
+            </div>
+        </section>
+
+        <!-- Regla del nivel actual (la escribe secuencias.js) -->
+        <p id="texto-regla" class="regla"></p>
+
+        <!-- Los cuatro botones de colores -->
+        <div class="tablero-colores">
+            <button class="boton-color color-rojo" aria-label="Rojo" disabled></button>
+            <button class="boton-color color-azul" aria-label="Azul" disabled></button>
+            <button class="boton-color color-verde" aria-label="Verde" disabled></button>
+            <button class="boton-color color-amarillo" aria-label="Amarillo" disabled></button>
+        </div>
+
+        <!-- Mensajes para el estudiante y botón de la siguiente acción -->
+        <div class="zona-mensaje">
+            <p id="texto-mensaje" class="mensaje"></p>
+            <button id="boton-accion" class="boton boton-accion oculto"></button>
+        </div>
+
+        <!-- Botones de control -->
+        <div class="botones-control">
+            <button id="boton-reiniciar" class="boton boton-secundario">Reiniciar juego</button>
+            <button class="boton" onclick="volverAlMenu()">Volver al menú</button>
+        </div>
+    </main>
+
+    <!-- Navegación general (para volver al menú) -->
+    <script src="../../js/navegacion.js"></script>
+    <!-- Progreso general (para guardar los niveles completados) -->
+    <script src="../../js/progreso.js"></script>
+    <!-- Código propio de este juego -->
+    <script src="secuencias.js"></script>
+</body>
+</html>

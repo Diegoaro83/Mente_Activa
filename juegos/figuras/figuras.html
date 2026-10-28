@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Figuras - Mente Activa</title>
+
+    <!-- Estilos generales (subimos dos carpetas con ../../) -->
+    <link rel="stylesheet" href="../../css/estilos.css">
+    <!-- Estilos propios de este juego -->
+    <link rel="stylesheet" href="figuras.css">
+</head>
+<body>
+
+    <header class="encabezado encabezado-figuras">
+        <h1>Figuras</h1>
+        <p>Entrena tu atención</p>
+    </header>
+
+    <main class="contenedor">
+
+        <!-- Marcador: nivel, aciertos y errores -->
+        <section class="marcador">
+            <div class="dato">
+                <span class="dato-titulo">Nivel</span>
+                <span id="texto-nivel" class="dato-valor">1 / 3</span>
+            </div>
+            <div class="dato">
+                <span class="dato-titulo">Aciertos</span>
+                <span id="texto-aciertos" class="dato-valor">0 / 5</span>
+            </div>
+            <div class="dato">
+                <span class="dato-titulo">Errores</span>
+                <span id="texto-errores" class="dato-valor">0</span>
+            </div>
+        </section>
+
+        <!-- Instrucción: qué figura hay que buscar, con un ejemplo -->
+        <div class="instruccion">
+            <span id="figura-ejemplo" class="forma"></span>
+            <p id="texto-instruccion">Encuentra todos los triángulos</p>
+        </div>
+
+        <!-- Cuadrícula: aquí JavaScript crea las figuras -->
+        <div id="cuadricula" class="cuadricula"></div>
+
+        <!-- Resumen que aparece al completar un nivel (empieza oculto) -->
+        <div id="resumen" class="resumen oculto">
+            <p id="texto-resumen-titulo" class="resumen-titulo"></p>
+            <p id="texto-resumen-detalle"></p>
+        </div>
+
+        <!-- Botones de control -->
+        <div class="botones-control">
+            <button id="boton-siguiente" class="boton boton-siguiente" disabled>Siguiente nivel</button>
+            <button id="boton-reiniciar" class="boton boton-secundario">Reiniciar nivel</button>
+            <button class="boton" onclick="volverAlMenu()">Volver al menú</button>
+        </div>
+    </main>
+
+    <!-- Navegación general (para volver al menú) -->
+    <script src="../../js/navegacion.js"></script>
+    <!-- Progreso general (para guardar los niveles completados) -->
+    <script src="../../js/progreso.js"></script>
+    <!-- Código propio de este juego -->
+    <script src="figuras.js"></script>
+</body>
+</html>

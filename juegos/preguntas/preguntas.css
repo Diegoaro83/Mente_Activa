@@ -1,0 +1,240 @@
+/* =========================================
+   ESTILOS DEL JUEGO PREGUNTAS
+   Solo afectan a preguntas.html
+   ========================================= */
+
+/* Color propio del encabezado de este juego */
+.encabezado-preguntas {
+    background-color: #0c8599;
+}
+
+/* ---------- Marcador ---------- */
+
+.marcador {
+    display: flex;
+    justify-content: space-between;
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+/* Cada cuadrito del marcador (Nivel, Pregunta, Aciertos, Puntos) */
+.dato {
+    flex: 1;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 8px 2px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dato-titulo {
+    display: block;
+    font-size: 0.75rem;
+    color: #666666;
+}
+
+.dato-valor {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #0c8599;
+}
+
+/* Texto con la regla para aprobar */
+.regla {
+    font-size: 0.95rem;
+    color: #555555;
+    margin-bottom: 12px;
+}
+
+/* ---------- Pregunta ---------- */
+
+.zona-pregunta {
+    text-align: left;
+    margin-bottom: 16px;
+}
+
+/* Etiqueta con el tema (Matemáticas, Ciencias...) */
+.tema {
+    display: inline-block;
+    background-color: #e3fafc;
+    color: #0b7285;
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.enunciado {
+    font-size: 1.2rem;
+    line-height: 1.4;
+    margin-bottom: 14px;
+}
+
+/* ---------- Opciones de respuesta ---------- */
+
+.opciones {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+/* Cada opción es un botón grande, fácil de pulsar */
+.opcion {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    min-height: 56px;
+    padding: 10px 12px;
+    background-color: #ffffff;
+    border: 3px solid #dee2e6;
+    border-radius: 12px;
+    font-size: 1.05rem;
+    text-align: left;
+    color: #222222;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;  /* Quita el destello azul en celulares */
+}
+
+.opcion:active {
+    transform: scale(0.98);
+}
+
+/* Círculo con la letra (A, B, C, D) */
+.letra {
+    flex-shrink: 0;
+    width: 34px;
+    height: 34px;
+    line-height: 34px;
+    border-radius: 50%;
+    background-color: #0c8599;
+    color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+}
+
+.texto-opcion {
+    flex: 1;
+}
+
+/* Marca escrita que aparece al responder ("✔ Correcta" o "✘ Tu respuesta").
+   Así la respuesta no se distingue solo por el color. */
+.marca {
+    flex-shrink: 0;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+/* Después de responder, las opciones ya no se pueden pulsar */
+.opcion:disabled {
+    cursor: default;
+    transform: none;
+}
+
+/* Opción correcta: fondo verde */
+.opcion.correcta {
+    background-color: #d3f9d8;
+    border-color: #2f9e44;
+}
+
+.opcion.correcta .letra {
+    background-color: #2f9e44;
+}
+
+.opcion.correcta .marca {
+    color: #2b8a3e;
+}
+
+/* Opción elegida por error: fondo rojo */
+.opcion.incorrecta {
+    background-color: #ffe3e3;
+    border-color: #e03131;
+}
+
+.opcion.incorrecta .letra {
+    background-color: #e03131;
+}
+
+.opcion.incorrecta .marca {
+    color: #c92a2a;
+}
+
+/* Las demás opciones se ven apagadas */
+.opcion.apagada {
+    opacity: 0.55;
+}
+
+/* ---------- Retroalimentación ---------- */
+
+.retroalimentacion {
+    border-radius: 12px;
+    padding: 12px;
+    margin-bottom: 14px;
+    border: 3px solid #2f9e44;
+    background-color: #ebfbee;
+}
+
+.retroalimentacion.error {
+    border-color: #e03131;
+    background-color: #fff5f5;
+}
+
+.resultado {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+}
+
+.explicacion {
+    line-height: 1.4;
+}
+
+.boton-continuar {
+    background-color: #0c8599;
+}
+
+/* ---------- Resumen del nivel ---------- */
+
+.resumen {
+    background-color: #ffffff;
+    border: 3px solid #0c8599;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.resumen-titulo {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+}
+
+.resumen-datos {
+    list-style: none;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 12px;
+}
+
+.resumen-mensaje {
+    font-weight: bold;
+    margin-bottom: 14px;
+}
+
+/* ---------- Botones de control ---------- */
+
+.botones-control {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.boton-secundario {
+    background-color: #868e96;
+}
+
+/* Clase para esconder elementos */
+.oculto {
+    display: none;
+}

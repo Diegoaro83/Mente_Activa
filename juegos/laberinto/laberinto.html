@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laberinto mental - Mente Activa</title>
+
+    <!-- Estilos generales (subimos dos carpetas con ../../) -->
+    <link rel="stylesheet" href="../../css/estilos.css">
+    <!-- Estilos propios de este juego -->
+    <link rel="stylesheet" href="laberinto.css">
+</head>
+<body>
+
+    <header class="encabezado encabezado-laberinto">
+        <h1>Laberinto mental</h1>
+        <p>Lleva a tu personaje hasta la salida</p>
+    </header>
+
+    <main class="contenedor">
+
+        <!-- Marcador: nivel y movimientos (no hay tiempo ni penalizaciones) -->
+        <section class="marcador">
+            <div class="dato">
+                <span class="dato-titulo">Nivel</span>
+                <span id="texto-nivel" class="dato-valor">1 / 3</span>
+            </div>
+            <div class="dato">
+                <span class="dato-titulo">Movimientos</span>
+                <span id="texto-movimientos" class="dato-valor">0</span>
+            </div>
+        </section>
+
+        <!-- Explicación de los símbolos: así no dependemos solo de los colores -->
+        <ul class="leyenda">
+            <li><span class="muestra muestra-personaje" aria-hidden="true">🙂</span> Tú</li>
+            <li><span class="muestra muestra-inicio" aria-hidden="true">🏠</span> Inicio</li>
+            <li><span class="muestra muestra-salida" aria-hidden="true">🏁</span> Salida</li>
+            <li><span class="muestra muestra-pared" aria-hidden="true"></span> Pared</li>
+        </ul>
+
+        <!-- Aquí laberinto.js dibuja las casillas del laberinto.
+             role="img" hace que el lector de pantalla lea su descripción (aria-label). -->
+        <div id="tablero" class="tablero" role="img" aria-label="Laberinto"></div>
+
+        <!-- Mensajes del juego. aria-live hace que el lector de pantalla los lea. -->
+        <p id="texto-estado" class="estado" aria-live="polite"></p>
+
+        <!-- Las flechas y la felicitación ocupan el MISMO lugar (una encima de la otra).
+             Así, al ganar o al repetir, los botones de abajo no cambian de posición
+             y un doble toque no pulsa "Volver al menú" sin querer. -->
+        <div class="zona-acciones">
+
+        <!-- Botones de movimiento en forma de cruz -->
+        <section id="controles" class="controles" aria-label="Controles de movimiento">
+            <button id="boton-arriba" class="flecha flecha-arriba" aria-label="Mover arriba">▲<span>Arriba</span></button>
+            <button id="boton-izquierda" class="flecha flecha-izquierda" aria-label="Mover a la izquierda">◀<span>Izquierda</span></button>
+            <button id="boton-derecha" class="flecha flecha-derecha" aria-label="Mover a la derecha">▶<span>Derecha</span></button>
+            <button id="boton-abajo" class="flecha flecha-abajo" aria-label="Mover abajo">▼<span>Abajo</span></button>
+        </section>
+
+        <!-- Mensaje de felicitación al llegar a la salida (empieza oculto) -->
+        <section id="zona-victoria" class="victoria invisible" aria-live="polite">
+            <h2 id="texto-victoria-titulo" class="victoria-titulo"></h2>
+            <p id="texto-victoria-detalle" class="victoria-detalle"></p>
+            <button id="boton-siguiente-nivel" class="boton boton-laberinto">Siguiente nivel</button>
+        </section>
+
+        </div>
+
+        <!-- Botones de control -->
+        <div class="botones-control">
+            <button id="boton-repetir" class="boton boton-secundario">Repetir nivel</button>
+            <button class="boton" onclick="volverAlMenu()">Volver al menú</button>
+        </div>
+    </main>
+
+    <!-- Navegación general (para volver al menú) -->
+    <script src="../../js/navegacion.js"></script>
+    <!-- Progreso general (para guardar los niveles completados) -->
+    <script src="../../js/progreso.js"></script>
+    <!-- Código propio de este juego -->
+    <script src="laberinto.js"></script>
+</body>
+</html>

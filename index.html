@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <!-- Esta línea hace que la página se adapte al tamaño del celular -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mente Activa</title>
+
+    <!-- Estilos generales compartidos por todo el proyecto -->
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <header class="encabezado">
+        <h1>Mente Activa</h1>
+        <p>Juegos para entrenar la mente</p>
+    </header>
+
+    <main class="contenedor">
+
+        <!-- Progreso general de todos los juegos (lo llena app.js) -->
+        <section class="panel-progreso">
+            <h2>Tu progreso</h2>
+            <p id="texto-progreso-general">0 / 15 niveles completados</p>
+            <div class="barra-progreso">
+                <div id="barra-progreso-general" class="barra-relleno"></div>
+            </div>
+        </section>
+
+        <!-- Menú principal: cada botón abre un juego y debajo se ve su progreso -->
+        <nav class="menu-juegos">
+            <div class="opcion-juego">
+                <button class="boton" onclick="irAJuego('parejas')">Parejas</button>
+                <p id="progreso-parejas" class="progreso-juego"></p>
+            </div>
+            <div class="opcion-juego">
+                <button class="boton" onclick="irAJuego('figuras')">Figuras</button>
+                <p id="progreso-figuras" class="progreso-juego"></p>
+            </div>
+            <div class="opcion-juego">
+                <button class="boton" onclick="irAJuego('secuencias')">Secuencias</button>
+                <p id="progreso-secuencias" class="progreso-juego"></p>
+            </div>
+            <div class="opcion-juego">
+                <button class="boton" onclick="irAJuego('preguntas')">Preguntas</button>
+                <p id="progreso-preguntas" class="progreso-juego"></p>
+            </div>
+            <div class="opcion-juego">
+                <button class="boton" onclick="irAJuego('laberinto')">Laberinto mental</button>
+                <p id="progreso-laberinto" class="progreso-juego"></p>
+            </div>
+        </nav>
+
+        <!-- Borra el progreso (pide confirmación antes) -->
+        <button id="boton-reiniciar-progreso" class="boton-reiniciar-progreso">Reiniciar progreso</button>
+    </main>
+
+    <footer class="pie">
+        <p>Colegio Brasilia Bosa</p>
+    </footer>
+
+    <!-- Archivos JavaScript generales (el orden importa: app.js va al final) -->
+    <script src="js/navegacion.js"></script>
+    <script src="js/progreso.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

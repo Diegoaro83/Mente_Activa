@@ -1,0 +1,136 @@
+/* =========================================
+   ESTILOS DEL JUEGO SECUENCIAS
+   Solo afectan a secuencias.html
+   ========================================= */
+
+/* Color propio del encabezado de este juego */
+.encabezado-secuencias {
+    background-color: #9c36b5;
+}
+
+/* ---------- Marcador ---------- */
+
+.marcador {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+/* Cada cuadrito del marcador (Nivel, Ronda, Aciertos) */
+.dato {
+    flex: 1;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 8px 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dato-titulo {
+    display: block;
+    font-size: 0.8rem;
+    color: #666666;
+}
+
+.dato-valor {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #9c36b5;
+}
+
+/* Texto con la regla del nivel */
+.regla {
+    font-size: 0.95rem;
+    color: #555555;
+    margin-bottom: 12px;
+}
+
+/* ---------- Botones de colores ---------- */
+
+/* Cuadrícula de 2 x 2 */
+.tablero-colores {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+/* Cada botón de color: grande y cuadrado, apagado por defecto */
+.boton-color {
+    aspect-ratio: 1 / 1;
+    min-height: 100px;
+    border: none;
+    border-radius: 20px;
+    opacity: 0.4;              /* Apagado */
+    cursor: pointer;
+    transition: opacity 0.15s, transform 0.15s, box-shadow 0.15s;
+    -webkit-tap-highlight-color: transparent;  /* Quita el destello azul en celulares */
+}
+
+/* Mientras está desactivado (por ejemplo, durante la demostración) */
+.boton-color:disabled {
+    cursor: not-allowed;
+}
+
+/* Botón encendido: se ve brillante, un poco más grande y con resplandor */
+.boton-color.iluminado {
+    opacity: 1;
+    transform: scale(1.06);
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.35);
+}
+
+.color-rojo     { background-color: #e03131; }
+.color-azul     { background-color: #1971c2; }
+.color-verde    { background-color: #2f9e44; }
+.color-amarillo { background-color: #fab005; }
+
+/* ---------- Mensajes ---------- */
+
+.zona-mensaje {
+    margin-bottom: 16px;
+}
+
+.mensaje {
+    min-height: 3em;           /* Reserva espacio para que la pantalla no salte */
+    background-color: #ffffff;
+    border: 3px solid #9c36b5;
+    border-radius: 12px;
+    padding: 10px;
+    font-size: 1.05rem;
+    font-weight: bold;
+}
+
+/* Mensaje de respuesta correcta */
+.mensaje.correcto {
+    background-color: #ebfbee;
+    border-color: #2f9e44;
+}
+
+/* Mensaje de respuesta incorrecta */
+.mensaje.error {
+    background-color: #fff5f5;
+    border-color: #e03131;
+}
+
+.boton-accion {
+    margin-top: 12px;
+    background-color: #9c36b5;
+}
+
+/* ---------- Botones de control ---------- */
+
+.botones-control {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.boton-secundario {
+    background-color: #868e96;
+}
+
+/* Clase para esconder elementos */
+.oculto {
+    display: none;
+}

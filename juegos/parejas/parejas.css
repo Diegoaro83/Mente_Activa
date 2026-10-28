@@ -1,0 +1,121 @@
+/* =========================================
+   ESTILOS DEL JUEGO PAREJAS
+   Solo afectan a parejas.html
+   ========================================= */
+
+/* Color propio del encabezado de este juego */
+.encabezado-parejas {
+    background-color: #e8590c;
+}
+
+/* ---------- Marcador ---------- */
+
+.marcador {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+/* Cada cuadrito del marcador (Nivel, Intentos, Parejas) */
+.dato {
+    flex: 1;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 8px 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dato-titulo {
+    display: block;
+    font-size: 0.8rem;
+    color: #666666;
+}
+
+.dato-valor {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #e8590c;
+}
+
+/* ---------- Tablero y tarjetas ---------- */
+
+/* El tablero es una cuadrícula. El número de columnas lo pone parejas.js */
+.tablero {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* Tarjeta oculta (boca abajo) */
+.tarjeta {
+    aspect-ratio: 1 / 1;       /* Siempre cuadrada */
+    min-height: 64px;          /* Tamaño cómodo para pulsar con el dedo */
+    border: none;
+    border-radius: 12px;
+    background-color: #e8590c;
+    color: #ffffff;
+    font-size: 2rem;
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s, background-color 0.2s;
+    -webkit-tap-highlight-color: transparent;  /* Quita el destello azul en celulares */
+}
+
+.tarjeta:active {
+    transform: scale(0.95);
+}
+
+/* Tarjeta volteada (se ve el emoji) */
+.tarjeta.descubierta {
+    background-color: #ffffff;
+    border: 3px solid #e8590c;
+    transform: scale(1.05);
+}
+
+/* Tarjeta que ya forma pareja */
+.tarjeta.encontrada {
+    background-color: #d3f9d8;
+    border: 3px solid #2f9e44;
+    transform: none;
+    cursor: default;
+}
+
+/* ---------- Mensaje de nivel completado ---------- */
+
+.mensaje {
+    background-color: #fff4e6;
+    border: 3px solid #e8590c;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 20px;
+    font-size: 1.15rem;
+    font-weight: bold;
+}
+
+.mensaje p {
+    margin-bottom: 12px;
+}
+
+.boton-continuar {
+    background-color: #2f9e44;
+}
+
+/* ---------- Botones de control ---------- */
+
+.botones-control {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.boton-secundario {
+    background-color: #868e96;
+}
+
+/* Clase para esconder elementos */
+.oculto {
+    display: none;
+}

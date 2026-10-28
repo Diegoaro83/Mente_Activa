@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntas - Mente Activa</title>
+
+    <!-- Estilos generales (subimos dos carpetas con ../../) -->
+    <link rel="stylesheet" href="../../css/estilos.css">
+    <!-- Estilos propios de este juego -->
+    <link rel="stylesheet" href="preguntas.css">
+</head>
+<body>
+
+    <header class="encabezado encabezado-preguntas">
+        <h1>Preguntas</h1>
+        <p>Elige la respuesta correcta</p>
+    </header>
+
+    <main class="contenedor">
+
+        <!-- Marcador: nivel, pregunta actual, aciertos y puntos -->
+        <section class="marcador">
+            <div class="dato">
+                <span class="dato-titulo">Nivel</span>
+                <span id="texto-nivel" class="dato-valor">1 / 3</span>
+            </div>
+            <div class="dato">
+                <span class="dato-titulo">Pregunta</span>
+                <span id="texto-pregunta" class="dato-valor">1 / 10</span>
+            </div>
+            <div class="dato">
+                <span class="dato-titulo">Aciertos</span>
+                <span id="texto-aciertos" class="dato-valor">0</span>
+            </div>
+            <div class="dato">
+                <span class="dato-titulo">Puntos</span>
+                <span id="texto-puntos" class="dato-valor">0</span>
+            </div>
+        </section>
+
+        <!-- Regla para aprobar el nivel (la escribe preguntas.js) -->
+        <p id="texto-regla" class="regla"></p>
+
+        <!-- Zona de la pregunta -->
+        <section id="zona-pregunta" class="zona-pregunta">
+            <span id="texto-tema" class="tema"></span>
+            <h2 id="texto-enunciado" class="enunciado"></h2>
+
+            <!-- Aquí preguntas.js crea los 4 botones de respuesta -->
+            <div id="opciones" class="opciones" role="group" aria-labelledby="texto-enunciado"></div>
+
+            <!-- Retroalimentación: aparece al responder. aria-live hace que
+                 los lectores de pantalla la lean en voz alta automáticamente. -->
+            <div id="retroalimentacion" class="retroalimentacion oculto" aria-live="polite">
+                <p id="texto-resultado" class="resultado"></p>
+                <p id="texto-explicacion" class="explicacion"></p>
+            </div>
+
+            <button id="boton-continuar" class="boton boton-continuar oculto">Siguiente pregunta</button>
+        </section>
+
+        <!-- Resumen al terminar las 10 preguntas (empieza oculto) -->
+        <section id="zona-resumen" class="resumen oculto" aria-live="polite">
+            <h2 id="texto-resumen-titulo" class="resumen-titulo"></h2>
+            <ul class="resumen-datos">
+                <li>Aciertos: <strong id="resumen-aciertos">0</strong></li>
+                <li>Errores: <strong id="resumen-errores">0</strong></li>
+                <li>Porcentaje: <strong id="resumen-porcentaje">0 %</strong></li>
+                <li>Puntos: <strong id="resumen-puntos">0</strong></li>
+            </ul>
+            <p id="texto-resumen-mensaje" class="resumen-mensaje"></p>
+            <button id="boton-siguiente-nivel" class="boton boton-continuar oculto">Siguiente nivel</button>
+        </section>
+
+        <!-- Botones de control -->
+        <div class="botones-control">
+            <button id="boton-repetir" class="boton boton-secundario">Repetir nivel</button>
+            <button class="boton" onclick="volverAlMenu()">Volver al menú</button>
+        </div>
+    </main>
+
+    <!-- Navegación general (para volver al menú) -->
+    <script src="../../js/navegacion.js"></script>
+    <!-- Progreso general (para guardar los niveles completados) -->
+    <script src="../../js/progreso.js"></script>
+    <!-- Código propio de este juego -->
+    <script src="preguntas.js"></script>
+</body>
+</html>

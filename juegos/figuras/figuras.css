@@ -1,0 +1,221 @@
+/* =========================================
+   ESTILOS DEL JUEGO FIGURAS
+   Solo afectan a figuras.html
+   ========================================= */
+
+/* Color propio del encabezado de este juego */
+.encabezado-figuras {
+    background-color: #2f9e44;
+}
+
+/* ---------- Marcador ---------- */
+
+.marcador {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+/* Cada cuadrito del marcador (Nivel, Aciertos, Errores) */
+.dato {
+    flex: 1;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 8px 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dato-titulo {
+    display: block;
+    font-size: 0.8rem;
+    color: #666666;
+}
+
+.dato-valor {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #2f9e44;
+}
+
+/* ---------- Instrucción ---------- */
+
+.instruccion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background-color: #ffffff;
+    border: 3px solid #2f9e44;
+    border-radius: 12px;
+    padding: 10px;
+    margin-bottom: 16px;
+    font-size: 1.15rem;
+    font-weight: bold;
+}
+
+/* La figura de ejemplo junto a la instrucción */
+.instruccion .forma {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    background-color: #495057;
+}
+
+/* ---------- Cuadrícula de figuras ---------- */
+
+/* El número de columnas lo pone figuras.js según el nivel */
+.cuadricula {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+/* Cada casilla es un botón que contiene una figura */
+.casilla {
+    position: relative;
+    aspect-ratio: 1 / 1;       /* Siempre cuadrada */
+    min-height: 48px;          /* Tamaño mínimo cómodo para el dedo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    border: 2px solid #dee2e6;
+    border-radius: 10px;
+    padding: 0;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;  /* Quita el destello azul en celulares */
+}
+
+.casilla:active {
+    transform: scale(0.95);
+}
+
+/* La figura ocupa el 70 % de la casilla */
+.casilla .forma {
+    width: 70%;
+    height: 70%;
+}
+
+/* Casilla pulsada correctamente: fondo verde y una marca ✓ */
+.casilla.correcta {
+    background-color: #d3f9d8;
+    border-color: #2f9e44;
+    cursor: default;
+}
+
+.casilla.correcta::after {
+    content: "✓";
+    position: absolute;
+    top: 2px;
+    right: 6px;
+    color: #2f9e44;
+    font-weight: bold;
+}
+
+/* Casilla pulsada por error: fondo rojo, figura apagada y una marca ✗ */
+.casilla.incorrecta {
+    background-color: #ffe3e3;
+    border-color: #e03131;
+    cursor: default;
+}
+
+.casilla.incorrecta .forma {
+    opacity: 0.35;
+}
+
+.casilla.incorrecta::after {
+    content: "✗";
+    position: absolute;
+    top: 2px;
+    right: 6px;
+    color: #e03131;
+    font-weight: bold;
+}
+
+/* ---------- Formas geométricas ----------
+   Todas parten de un cuadrado de color.
+   clip-path "recorta" el cuadrado para dibujar cada forma. */
+
+.forma {
+    display: block;
+}
+
+.forma-cuadrado {
+    border-radius: 4px;
+}
+
+.forma-circulo {
+    border-radius: 50%;
+}
+
+.forma-triangulo {
+    clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+}
+
+.forma-rombo {
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.forma-estrella {
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.forma-pentagono {
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+}
+
+.forma-hexagono {
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+.forma-octagono {
+    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+}
+
+/* ---------- Resumen del nivel ---------- */
+
+.resumen {
+    background-color: #ebfbee;
+    border: 3px solid #2f9e44;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 16px;
+    font-size: 1.05rem;
+}
+
+.resumen-titulo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+/* ---------- Botones de control ---------- */
+
+.botones-control {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.boton-siguiente {
+    background-color: #2f9e44;
+}
+
+/* Botón desactivado: se ve gris y no se puede pulsar */
+.boton:disabled {
+    background-color: #ced4da;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.boton-secundario {
+    background-color: #868e96;
+}
+
+/* Clase para esconder elementos */
+.oculto {
+    display: none;
+}

@@ -1,0 +1,137 @@
+/* =========================================
+   ESTILOS GENERALES DE MENTE ACTIVA
+   Estos estilos los comparten el menú y los juegos.
+   ========================================= */
+
+/* Colores principales del proyecto (se pueden cambiar aquí) */
+:root {
+    --color-principal: #4a6cf7;
+    --color-fondo: #f2f5ff;
+    --color-texto: #222222;
+    --color-blanco: #ffffff;
+}
+
+/* Quita márgenes por defecto y hace que los tamaños sean más fáciles de calcular */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Parte de arriba con el título */
+.encabezado {
+    background-color: var(--color-principal);
+    color: var(--color-blanco);
+    text-align: center;
+    padding: 24px 16px;
+}
+
+.encabezado h1 {
+    font-size: 2rem;
+}
+
+/* Zona central de la página */
+.contenedor {
+    flex: 1;
+    width: 100%;
+    max-width: 480px;      /* Ancho cómodo para celulares */
+    margin: 0 auto;
+    padding: 24px 16px;
+    text-align: center;
+}
+
+/* Lista de botones del menú, uno debajo del otro */
+.menu-juegos {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Botón general reutilizable */
+.boton {
+    background-color: var(--color-principal);
+    color: var(--color-blanco);
+    border: none;
+    border-radius: 12px;
+    padding: 18px;
+    font-size: 1.25rem;
+    cursor: pointer;
+    width: 100%;
+}
+
+.boton:active {
+    transform: scale(0.97);   /* Efecto de "presionar" en el celular */
+}
+
+/* ---------- Progreso en el menú principal ---------- */
+
+/* Recuadro con el progreso general */
+.panel-progreso {
+    background-color: var(--color-blanco);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.panel-progreso h2 {
+    font-size: 1.2rem;
+    margin-bottom: 6px;
+}
+
+.panel-progreso p {
+    margin-bottom: 10px;
+}
+
+/* Barra gris de fondo */
+.barra-progreso {
+    height: 16px;
+    background-color: #dde3f7;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Parte coloreada de la barra (su ancho lo pone app.js) */
+.barra-relleno {
+    width: 0%;
+    height: 100%;
+    background-color: var(--color-principal);
+    transition: width 0.4s;
+}
+
+/* Cada juego del menú: su botón y su progreso debajo */
+.opcion-juego .progreso-juego {
+    margin-top: 6px;
+    font-size: 0.95rem;
+    color: #555555;
+}
+
+/* Botón para borrar el progreso: discreto, para no pulsarlo sin querer */
+.boton-reiniciar-progreso {
+    margin-top: 28px;
+    background: none;
+    border: none;
+    color: #c92a2a;
+    font-size: 0.95rem;
+    text-decoration: underline;
+    padding: 12px;
+    min-height: 44px;      /* Alto mínimo recomendado para pulsar con el dedo */
+    cursor: pointer;
+}
+
+/* Parte de abajo de la página */
+.pie {
+    text-align: center;
+    padding: 16px;
+    font-size: 0.9rem;
+    color: #666666;
+}

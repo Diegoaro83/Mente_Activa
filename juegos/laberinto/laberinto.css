@@ -1,0 +1,258 @@
+/* =========================================
+   ESTILOS DEL JUEGO LABERINTO MENTAL
+   Solo afectan a laberinto.html
+   ========================================= */
+
+/* Color propio del encabezado de este juego */
+.encabezado-laberinto {
+    background-color: #c2255c;
+}
+
+/* En los botones de esta página, un doble toque rápido no hace zoom en el celular */
+button {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;   /* Quita el destello azul en celulares */
+}
+
+/* ---------- Marcador ---------- */
+
+.marcador {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+/* Cada cuadrito del marcador (Nivel, Movimientos) */
+.dato {
+    flex: 1;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 6px 2px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dato-titulo {
+    display: block;
+    font-size: 0.75rem;
+    color: #666666;
+}
+
+.dato-valor {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #c2255c;
+}
+
+/* ---------- Leyenda (qué significa cada símbolo) ---------- */
+
+.leyenda {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px 14px;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.leyenda li {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Cuadrito de muestra al lado de cada palabra de la leyenda */
+.muestra {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+/* ---------- Tablero del laberinto ---------- */
+
+/* El tablero es una cuadrícula. laberinto.js escribe en --columnas cuántas
+   casillas tiene cada fila, y así todas caben en el ancho de la pantalla. */
+.tablero {
+    --columnas: 7;
+    display: grid;
+    grid-template-columns: repeat(var(--columnas), 1fr);
+    width: 100%;
+    border: 3px solid #212529;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 8px;
+    /* El tamaño de los símbolos depende del tamaño de cada casilla */
+    font-size: calc(min(100vw - 38px, 442px) / var(--columnas) * 0.7);
+}
+
+/* Cada casilla es un cuadrado (alto igual al ancho) */
+.casilla {
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    background-color: #ffffff;
+}
+
+/* Paredes: color oscuro con rayas, para que se distingan aunque no se vean bien los colores */
+.casilla.pared,
+.muestra-pared {
+    background-color: #343a40;
+    background-image: repeating-linear-gradient(45deg, transparent 0 4px, rgba(255, 255, 255, 0.12) 4px 6px);
+}
+
+/* Casilla de inicio: lleva el símbolo 🏠 */
+.casilla.inicio,
+.muestra-inicio {
+    background-color: #fff3bf;
+}
+
+/* Casilla de salida: lleva el símbolo 🏁 */
+.casilla.salida,
+.muestra-salida {
+    background-color: #d3f9d8;
+}
+
+/* Casillas por donde ya pasó el personaje: un tono suave que ayuda a orientarse */
+.casilla.recorrida {
+    background-color: #ffe3ec;
+}
+
+/* Casilla donde está el personaje: lleva el símbolo 🙂 y un borde */
+.casilla.personaje,
+.muestra-personaje {
+    background-color: #ffdeeb;
+    box-shadow: inset 0 0 0 2px #c2255c;
+}
+
+/* Al chocar con una pared, el personaje se sacude un poco */
+.casilla.choque {
+    animation: sacudir 0.25s;
+}
+
+@keyframes sacudir {
+    25% { transform: translateX(-3px); }
+    75% { transform: translateX(3px); }
+}
+
+/* Texto con mensajes (posición, paredes, etc.) */
+.estado {
+    min-height: 2.6em;       /* Reserva espacio para que los botones no se muevan */
+    font-size: 0.95rem;
+    color: #444444;
+    margin-bottom: 8px;
+}
+
+/* ---------- Zona de acciones: flechas y felicitación en el mismo lugar ---------- */
+
+/* Las dos partes se ponen en la misma celda de una cuadrícula, una encima de
+   la otra. La zona mide lo que mide la más alta, aunque una esté invisible,
+   así nada cambia de lugar cuando se pasa de una a otra. */
+.zona-acciones {
+    display: grid;
+    margin-bottom: 16px;
+}
+
+.zona-acciones > * {
+    grid-area: 1 / 1;
+}
+
+/* Invisible pero ocupando su espacio (no se puede pulsar ni lo lee el lector de pantalla) */
+.invisible {
+    visibility: hidden;
+}
+
+/* ---------- Botones de movimiento ---------- */
+
+/* Distribución como las flechas del teclado:
+       arriba
+   izquierda  abajo  derecha */
+.controles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+        ".         arriba  ."
+        "izquierda abajo   derecha";
+    gap: 8px;
+    align-content: start;
+}
+
+.flecha {
+    min-height: 64px;        /* Grande para el dedo */
+    border: none;
+    border-radius: 12px;
+    background-color: #c2255c;
+    color: #ffffff;
+    font-size: 1.4rem;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* Palabra pequeña debajo de la flecha */
+.flecha span {
+    display: block;
+    font-size: 0.75rem;
+}
+
+.flecha:active {
+    transform: scale(0.95);
+}
+
+.flecha:disabled {
+    background-color: #ced4da;
+    color: #495057;
+    cursor: default;
+    transform: none;
+}
+
+.flecha-arriba    { grid-area: arriba; }
+.flecha-izquierda { grid-area: izquierda; }
+.flecha-abajo     { grid-area: abajo; }
+.flecha-derecha   { grid-area: derecha; }
+
+/* ---------- Mensaje de victoria ---------- */
+
+.victoria {
+    background-color: #ffffff;
+    border: 3px solid #2f9e44;
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.victoria-titulo {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+}
+
+.victoria-detalle {
+    margin-bottom: 14px;
+    line-height: 1.4;
+}
+
+.boton-laberinto {
+    background-color: #c2255c;
+}
+
+/* ---------- Botones de control ---------- */
+
+.botones-control {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.boton-secundario {
+    background-color: #868e96;
+}
+
+/* Clase para esconder elementos */
+.oculto {
+    display: none;
+}

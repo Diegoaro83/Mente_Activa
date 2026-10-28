@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parejas - Mente Activa</title>
+
+    <!-- Estilos generales (subimos dos carpetas con ../../) -->
+    <link rel="stylesheet" href="../../css/estilos.css">
+    <!-- Estilos propios de este juego -->
+    <link rel="stylesheet" href="parejas.css">
+</head>
+<body>
+
+    <header class="encabezado encabezado-parejas">
+        <h1>Parejas</h1>
+        <p>Encuentra las tarjetas iguales</p>
+    </header>
+
+    <main class="contenedor">
+
+        <!-- Marcador: nivel, intentos y parejas encontradas -->
+        <section class="marcador">
+            <div class="dato">
+                <span class="dato-titulo">Nivel</span>
+                <span id="texto-nivel" class="dato-valor">1 / 3</span>
+            </div>
+            <div class="dato">
+                <span class="dato-titulo">Intentos</span>
+                <span id="texto-intentos" class="dato-valor">0</span>
+            </div>
+            <div class="dato">
+                <span class="dato-titulo">Parejas</span>
+                <span id="texto-parejas" class="dato-valor">0 / 3</span>
+            </div>
+        </section>
+
+        <!-- Tablero: aquí JavaScript crea las tarjetas -->
+        <div id="tablero" class="tablero"></div>
+
+        <!-- Mensaje que aparece al completar un nivel (empieza oculto) -->
+        <div id="mensaje" class="mensaje oculto">
+            <p id="texto-mensaje"></p>
+            <button id="boton-continuar" class="boton boton-continuar"></button>
+        </div>
+
+        <!-- Botones de control -->
+        <div class="botones-control">
+            <button id="boton-reiniciar" class="boton boton-secundario">Reiniciar nivel</button>
+            <button class="boton" onclick="volverAlMenu()">Volver al menú</button>
+        </div>
+    </main>
+
+    <!-- Navegación general (para volver al menú) -->
+    <script src="../../js/navegacion.js"></script>
+    <!-- Progreso general (para guardar los niveles completados) -->
+    <script src="../../js/progreso.js"></script>
+    <!-- Código propio de este juego -->
+    <script src="parejas.js"></script>
+</body>
+</html>
