@@ -1,0 +1,530 @@
+/* =========================================
+   ESTILOS DE LA PÁGINA ACADÉMICA (ANTEPROYECTO)
+
+   OJO: este archivo es SOLO para la página del anteproyecto.
+   Los estilos del videojuego están en otro archivo: ../css/estilos.css
+   Los dos archivos se llaman igual, pero están en carpetas distintas
+   y no se mezclan.
+
+   El diseño se piensa primero para celular y al final hay una
+   regla @media que ajusta la página para pantallas grandes.
+   ========================================= */
+
+/* Colores del proyecto (los mismos tonos del videojuego) */
+:root {
+    --azul-juego: #4a6cf7;      /* Azul principal del videojuego */
+    --azul-oscuro: #3451d1;     /* Azul más oscuro: se lee mejor sobre blanco */
+    --fondo: #f2f5ff;           /* Fondo azul muy claro, como el juego */
+    --texto: #222222;
+    --texto-suave: #555555;
+    --blanco: #ffffff;
+    --borde: #d6ddf5;
+    --amarillo-claro: #fff4d6;  /* Fondo de los avisos "Pendiente" */
+    --amarillo-oscuro: #7a5200; /* Texto de los avisos "Pendiente" */
+    --verde-claro: #dff5e3;
+    --verde-oscuro: #1f6b2e;
+}
+
+/* Hace que los tamaños sean más fáciles de calcular */
+* {
+    box-sizing: border-box;
+}
+
+/* Al pulsar un enlace del menú, la página baja suavemente */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    background-color: var(--fondo);
+    color: var(--texto);
+}
+
+/* ---------- Encabezado ---------- */
+
+.encabezado {
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+    text-align: center;
+    padding: 32px 16px;
+}
+
+.encabezado h1 {
+    margin: 4px 0;
+    font-size: 2.2rem;
+}
+
+.etiqueta-superior {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.subtitulo {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+/* ---------- Menú de navegación ---------- */
+
+/* "sticky" hace que el menú se quede pegado arriba al bajar.
+   Los enlaces van siempre en UNA sola línea: si no caben (en celular),
+   el menú se desliza hacia los lados con el dedo. Así el menú es bajito
+   y no tapa los títulos de las secciones. */
+.menu {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    flex-wrap: nowrap;          /* Todos los enlaces en una sola línea */
+    overflow-x: auto;           /* Si no caben, se desliza hacia los lados */
+    gap: 6px;
+    padding: 10px 12px;
+    background-color: var(--blanco);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Centra los enlaces cuando hay espacio (computador).
+   Cuando no hay espacio (celular), el menú empieza desde la izquierda. */
+.menu a:first-child {
+    margin-left: auto;
+}
+
+.menu a:last-child {
+    margin-right: auto;
+}
+
+.menu a {
+    flex-shrink: 0;             /* Los enlaces no se aplastan */
+    white-space: nowrap;        /* El texto de un enlace no se parte en dos líneas */
+    display: inline-block;
+    padding: 8px 12px;
+    min-height: 44px;           /* Alto mínimo para pulsar con el dedo */
+    line-height: 28px;
+    border-radius: 20px;
+    color: var(--azul-oscuro);
+    font-weight: bold;
+    font-size: 0.95rem;
+    text-decoration: none;
+}
+
+.menu a:hover,
+.menu a:focus {
+    background-color: var(--fondo);
+    text-decoration: underline;
+}
+
+/* ---------- Zona central y secciones ---------- */
+
+.contenido {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px 16px;
+}
+
+section {
+    background-color: var(--blanco);
+    border-radius: 12px;
+    padding: 20px 16px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    scroll-margin-top: 80px;    /* Evita que el menú fijo (unos 64px de alto) tape el título */
+}
+
+h2 {
+    margin-top: 0;
+    color: var(--azul-oscuro);
+    font-size: 1.6rem;
+    border-bottom: 3px solid var(--azul-juego);
+    padding-bottom: 6px;
+}
+
+h3 {
+    color: var(--azul-oscuro);
+    font-size: 1.2rem;
+    margin-bottom: 6px;
+}
+
+h4 {
+    margin: 0 0 8px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: var(--azul-oscuro);
+}
+
+/* Enlace "↑ Volver arriba" al final de cada sección */
+.volver-arriba {
+    display: inline-block;
+    margin-top: 16px;
+    font-size: 0.9rem;
+}
+
+/* ---------- Textos especiales ---------- */
+
+/* Título del anteproyecto */
+.cita {
+    font-style: italic;
+    background-color: var(--fondo);
+    border-left: 4px solid var(--azul-juego);
+    padding: 12px;
+    margin: 0;
+}
+
+/* Pregunta problemática destacada */
+.pregunta {
+    font-size: 1.15rem;
+    font-weight: bold;
+    background-color: var(--fondo);
+    border-left: 6px solid var(--azul-juego);
+    border-radius: 8px;
+    padding: 16px;
+}
+
+/* Notas aclaratorias */
+.nota {
+    font-size: 0.95rem;
+    color: var(--texto-suave);
+}
+
+/* Etiqueta amarilla "Pendiente de confirmar" */
+.pendiente {
+    display: inline-block;
+    background-color: var(--amarillo-claro);
+    color: var(--amarillo-oscuro);
+    border: 1px solid #e8c766;
+    border-radius: 6px;
+    padding: 0 8px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+/* Etiquetas de estado en la tabla de fases */
+.estado {
+    display: inline-block;
+    border-radius: 6px;
+    padding: 0 8px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+/* Cada estado tiene fondo y borde propios, igual que "Pendiente de confirmar" */
+.realizada {
+    background-color: var(--verde-claro);
+    color: var(--verde-oscuro);
+    border: 1px solid #8fd19e;
+}
+
+.en-curso {
+    background-color: #dbe4ff;  /* Azul distinto al de las filas de la tabla */
+    color: var(--azul-oscuro);
+    border: 1px solid #91a7ff;
+}
+
+/* Listas de datos (sin viñetas) */
+.lista-datos {
+    list-style: none;
+    padding: 0;
+}
+
+.lista-datos li {
+    padding: 6px 0;
+    border-bottom: 1px solid var(--borde);
+}
+
+/* ---------- Tarjetas (antecedentes) ---------- */
+
+.tarjeta {
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    padding: 4px 16px 12px;
+    margin-bottom: 16px;
+}
+
+/* ---------- Conceptos (lista <dl>) ---------- */
+
+.conceptos dt {
+    font-weight: bold;
+    font-size: 1.15rem;
+    color: var(--azul-oscuro);
+    margin-top: 16px;
+}
+
+.conceptos dd {
+    margin: 4px 0 0;
+    padding-left: 12px;
+    border-left: 3px solid var(--borde);
+}
+
+.conceptos dd p {
+    margin: 4px 0;
+}
+
+/* ---------- Lo planeado y lo realizado ---------- */
+
+.comparacion {
+    display: flex;
+    flex-direction: column;     /* En celular, una caja debajo de la otra */
+    gap: 12px;
+}
+
+.caja {
+    flex: 1;
+    background-color: var(--fondo);
+    border-radius: 12px;
+    padding: 12px 16px;
+}
+
+/* ---------- Tabla de fases ---------- */
+
+/* Aviso que solo se ve en celular (en computador lo oculta la regla @media del final) */
+.aviso-tabla {
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: var(--azul-oscuro);
+    margin: 0 0 8px;
+}
+
+/* En celular pequeño la tabla se puede mover de lado */
+.tabla-contenedor {
+    overflow-x: auto;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 560px;
+}
+
+caption {
+    text-align: left;
+    font-weight: bold;
+    padding-bottom: 8px;
+}
+
+th,
+td {
+    border: 1px solid var(--borde);
+    padding: 10px;
+    text-align: left;
+    vertical-align: top;
+}
+
+th {
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+}
+
+tbody tr:nth-child(even) {
+    background-color: var(--fondo);  /* Filas alternadas para leer mejor */
+}
+
+/* ---------- Galería de juegos ---------- */
+
+/* "grid" acomoda las tarjetas solas según el ancho de la pantalla */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+}
+
+.juego {
+    border: 1px solid var(--borde);
+    border-top: 6px solid var(--azul-juego);
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.juego h3 {
+    margin-top: 4px;
+}
+
+.juego p {
+    margin: 4px 0;
+}
+
+.juego-icono {
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+/* Color propio de cada juego en el borde superior */
+.juego-parejas    { border-top-color: #e8590c; }
+.juego-figuras    { border-top-color: #2b8a3e; }
+.juego-secuencias { border-top-color: #ae3ec9; }
+.juego-preguntas  { border-top-color: #1971c2; }
+.juego-laberinto  { border-top-color: #c92a2a; }
+
+/* ---------- Botones y enlaces con forma de botón ---------- */
+
+.boton,
+.boton-jugar,
+.boton-juego {
+    display: inline-block;
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+    border: none;
+    border-radius: 12px;
+    padding: 12px 18px;
+    min-height: 44px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.boton:hover,
+.boton-jugar:hover,
+.boton-juego:hover {
+    background-color: #2a3fae;
+}
+
+.boton:active,
+.boton-jugar:active,
+.boton-juego:active {
+    transform: scale(0.97);     /* Efecto de "presionar" */
+}
+
+.boton-jugar {
+    margin-top: 12px;
+    font-size: 1.15rem;
+}
+
+/* El botón de cada juego queda abajo de la tarjeta */
+.boton-juego {
+    margin-top: auto;
+}
+
+.juego p:last-of-type {
+    margin-bottom: 12px;
+}
+
+.boton-secundario {
+    background-color: var(--blanco);
+    color: var(--azul-oscuro);
+    border: 2px solid var(--azul-oscuro);
+}
+
+.boton-secundario:hover {
+    background-color: var(--fondo);
+}
+
+/* Borde visible al moverse con el teclado (tecla Tab) */
+a:focus-visible,
+button:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+input:focus-visible {
+    outline: 3px solid #f59f00;
+    outline-offset: 2px;
+}
+
+/* ---------- Encuesta ---------- */
+
+.pregunta-encuesta {
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    padding: 12px 16px;
+    margin: 0 0 16px;
+}
+
+/* Título de cada pregunta (en negrita) */
+.titulo-pregunta,
+.pregunta-encuesta legend {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+/* Celular: el título de la pregunta 4 ocupa dos líneas y el borde del recuadro
+   pasaba entre ellas. "float" saca el título del borde y lo pone dentro del recuadro. */
+@media (max-width: 699px) {
+    #encuestaForm fieldset:last-of-type legend {
+        float: left;
+        width: 100%;
+    }
+}
+
+/* Opciones de respuesta: letra normal, una debajo de la otra y fáciles de pulsar */
+.opcion {
+    display: block;
+    font-weight: normal;
+    padding: 6px 0;
+    cursor: pointer;
+}
+
+select,
+textarea {
+    width: 100%;
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 10px;
+    border: 1px solid #8a94b8;
+    border-radius: 8px;
+}
+
+.botones-formulario {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* Mensajes que escribe script.js (aviso y recomendación) */
+.mensaje {
+    font-weight: bold;
+    color: var(--verde-oscuro);
+    min-height: 1.6em;
+}
+
+/* ---------- Pie de página ---------- */
+
+.pie {
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+    text-align: center;
+    padding: 20px 16px;
+    font-size: 0.9rem;
+}
+
+.pie p {
+    margin: 4px 0;
+}
+
+.pie a {
+    color: var(--blanco);
+}
+
+/* =========================================
+   PANTALLAS GRANDES (computador y tableta)
+   Estas reglas solo se aplican si la pantalla mide 700px o más.
+   ========================================= */
+@media (min-width: 700px) {
+    .encabezado h1 {
+        font-size: 3rem;
+    }
+
+    section {
+        padding: 28px 32px;
+    }
+
+    /* En pantalla grande la tabla cabe completa: el aviso no hace falta */
+    .aviso-tabla {
+        display: none;
+    }
+
+    /* Lo planeado y lo realizado quedan lado a lado */
+    .comparacion {
+        flex-direction: row;
+    }
+}

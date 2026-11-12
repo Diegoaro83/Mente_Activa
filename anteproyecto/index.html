@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <!-- Esta línea hace que la página se adapte al tamaño del celular -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mente Activa - Anteproyecto</title>
+
+    <!-- Estilos SOLO de esta página académica (no son los del videojuego) -->
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <!-- =========================================
+         ENCABEZADO Y MENÚ DE NAVEGACIÓN
+         Cada enlace href="#..." lleva a la sección con ese mismo id.
+         ========================================= -->
+    <header class="encabezado" id="inicio">
+        <p class="etiqueta-superior">Anteproyecto · Educación Media Integral · 2026</p>
+        <h1>Mente Activa</h1>
+        <p class="subtitulo">Videojuego educativo para fortalecer la concentración</p>
+    </header>
+
+    <nav class="menu" aria-label="Secciones del anteproyecto">
+        <a href="#presentacion">Inicio</a>
+        <a href="#problema">Problema</a>
+        <a href="#objetivos">Objetivos</a>
+        <a href="#justificacion">Justificación</a>
+        <a href="#antecedentes">Antecedentes</a>
+        <a href="#conceptos">Conceptos</a>
+        <a href="#metodologia">Metodología</a>
+        <a href="#fases">Fases</a>
+        <a href="#juegos">Juegos</a>
+        <a href="#encuesta">Encuesta</a>
+        <a href="#recomendacion">Recomendación</a>
+        <a href="#avance">Avance</a>
+    </nav>
+
+    <main class="contenido">
+
+        <!-- =========================================
+             1. PRESENTACIÓN DEL PROYECTO
+             ========================================= -->
+        <section id="presentacion">
+            <h2>Presentación del proyecto</h2>
+
+            <p>
+                <strong>Mente Activa</strong> es un videojuego educativo con cinco juegos y quince niveles,
+                pensado para ayudar a los estudiantes a entrenar la memoria, la atención y la concentración
+                de una manera divertida.
+            </p>
+
+            <h3>Título del anteproyecto</h3>
+            <p class="cita">
+                «Videojuego para mejorar la concentración, utilizando JavaScript, Unity con el fin de optimizar
+                la atención de los estudiantes del grado sexto 2026 del Colegio Brasilia Bosa»
+            </p>
+            <p class="nota">
+                <span class="pendiente">Pendiente de confirmar</span>
+                El título menciona Unity, pero el videojuego se construyó con HTML, CSS y JavaScript, sin Unity.
+            </p>
+
+            <h3>Datos del proyecto</h3>
+            <ul class="lista-datos">
+                <li><strong>Integrantes:</strong> Anny Mishel Rodríguez Velarde y Laura Daniela Molina Vargas</li>
+                <li><strong>Curso:</strong> 1001</li>
+                <li><strong>Colegio:</strong> Colegio Brasilia Bosa</li>
+                <li><strong>Línea de profundización:</strong> Diseño de Software</li>
+                <li><strong>Tutor(a):</strong> <span class="pendiente">Pendiente de confirmar</span></li>
+                <li><strong>Asesor(a):</strong> <span class="pendiente">Pendiente de confirmar</span></li>
+                <li><strong>Población a la que va dirigido:</strong> <span class="pendiente">Pendiente de confirmar</span>
+                    (el título dice grado sexto; otras partes del documento dicen de sexto a octavo)</li>
+            </ul>
+
+            <!-- Enlace al videojuego: la página académica solo enlaza, no carga archivos del juego -->
+            <a class="boton-jugar" href="../index.html">🎮 Jugar Mente Activa</a>
+        </section>
+
+        <!-- =========================================
+             2. PROBLEMA
+             ========================================= -->
+        <section id="problema">
+            <h2>Problema</h2>
+
+            <h3>Descripción del problema</h3>
+            <p>
+                Muchos estudiantes tienen dificultades para mantener la concentración durante las actividades
+                escolares debido a distracciones, cansancio, falta de motivación y uso constante de dispositivos
+                electrónicos. Esto puede afectar su aprendizaje y rendimiento académico.
+            </p>
+            <p>
+                Por ello, se propone desarrollar un videojuego educativo que, mediante retos y actividades
+                interactivas, ayude a fortalecer la concentración, memoria y atención de los estudiantes de una
+                manera divertida y motivadora.
+            </p>
+
+            <h3>Contexto problemático</h3>
+            <p>
+                Actualmente muchos estudiantes presentan dificultades para concentrarse en clase, debido al uso
+                excesivo de dispositivos electrónicos, distracciones constantes y falta de motivación en el
+                aprendizaje. Esta situación afecta su rendimiento académico, ya que les cuesta prestar atención,
+                comprender los temas, retener información y participar activamente en las actividades escolares.
+                Por tal motivo se hace necesario implementar estrategias innovadoras que ayuden a mejorar la
+                concentración de manera dinámica y atractiva para los estudiantes que redunden en mejores
+                resultados académicos.
+            </p>
+            <p>
+                La falta de concentración en el estudio provocada por dispositivos electrónicos es una
+                problemática creciente en el ámbito educativo, caracterizada por la interrupción constante del
+                enfoque cognitivo, la reducción de la atención sostenida y el deterioro del rendimiento
+                académico. El uso desregulado de smartphones, redes sociales y juegos durante el tiempo de
+                estudio genera dependencia, procrastinación y un aprendizaje superficial.
+            </p>
+            <p class="nota">
+                <span class="pendiente">Pendiente de confirmar</span>
+                Evidencias observadas (encuestas, observaciones o datos del colegio) y lugar exacto donde ocurre la situación.
+            </p>
+
+            <h3>Pregunta problemática</h3>
+            <p class="pregunta">
+                ¿Cómo mejorar la concentración de los estudiantes a través de un videojuego educativo, con el fin
+                de fortalecer su atención y rendimiento académico en el colegio y en el hogar?
+            </p>
+            <a class="volver-arriba" href="#inicio">↑ Volver arriba</a>
+        </section>
+
+        <!-- =========================================
+             3. OBJETIVOS
+             ========================================= -->
+        <section id="objetivos">
+            <h2>Objetivos</h2>
+
+            <h3>Objetivo general</h3>
+            <p>
+                Implementar un videojuego interactivo que funcione como una herramienta eficaz para fortalecer la
+                concentración, la atención y otras habilidades cognitivas como la creatividad, la memoria y el
+                trabajo en equipo. Este será desarrollado utilizando tecnologías como JavaScript y Unity,
+                integrando mecánicas de juego atractivas, niveles progresivos y desafíos que estimulen el
+                aprendizaje, la resolución de problemas y la participación activa de los usuarios en entornos
+                tanto educativos como recreativos.
+            </p>
+
+            <h3>Objetivos específicos</h3>
+            <ol>
+                <li>Diseñar ideas, bocetos y un story board, en el que se defina las reglas, niveles y actividades
+                    que ayudan a mejorar la concentración de los estudiantes.</li>
+                <li>Construir el videojuego educativo utilizando herramientas como JavaScript y Unity, integrando
+                    las actividades y elementos necesarios para su funcionamiento.</li>
+                <li>Evaluar el funcionamiento del juego para validar su efectividad en la mejora de la concentración.</li>
+            </ol>
+
+            <p class="nota">
+                <span class="pendiente">Pendiente de confirmar</span>
+                Los objetivos mencionan Unity, pero el juego se construyó con HTML, CSS y JavaScript.
+                También falta confirmar si se mantienen «creatividad» y «trabajo en equipo», ya que los juegos actuales son individuales.
+            </p>
+            <a class="volver-arriba" href="#inicio">↑ Volver arriba</a>
+        </section>
+
+        <!-- =========================================
+             4. JUSTIFICACIÓN
+             ========================================= -->
+        <section id="justificacion">
+            <h2>Justificación</h2>
+            <p>
+                La justificación del proyecto surge de la necesidad de identificar e implementar alternativas que
+                contribuyan al fortalecimiento de la concentración en estudiantes de sexto a octavo grado, teniendo
+                en cuenta que las distracciones durante las actividades escolares pueden afectar la comprensión de
+                los contenidos, el seguimiento de instrucciones y la realización adecuada de las tareas. Por esta
+                razón, se propone desarrollar una aplicación interactiva que incluya diferentes ejercicios,
+                actividades y desafíos diseñados para estimular la atención y la concentración de una manera
+                dinámica, didáctica y atractiva.
+            </p>
+            <p>
+                La <strong>pertinencia</strong> del proyecto radica en que busca responder a una necesidad identificada
+                en el contexto educativo mediante el uso de una herramienta tecnológica que apoye el desarrollo de
+                habilidades cognitivas importantes para el aprendizaje. Su <strong>relevancia</strong> se encuentra en
+                aprovechar la tecnología con fines educativos, incorporando elementos de gamificación que despierten
+                el interés de los estudiantes, aumenten su motivación y promuevan su participación activa. De esta
+                manera, se pretende demostrar que los recursos digitales no solamente pueden utilizarse como medios
+                de entretenimiento, sino que también pueden convertirse en herramientas de apoyo para los procesos
+                de enseñanza y aprendizaje.
+            </p>
+            <p>
+                Por otra parte, la <strong>conveniencia</strong> del proyecto consiste en reunir diferentes ejercicios
+                y desafíos relacionados con la concentración dentro de un mismo entorno digital, permitiendo que los
+                estudiantes interactúen con actividades que impliquen observación, memoria, análisis, seguimiento de
+                instrucciones y resolución de problemas. Además, su desarrollo representa una oportunidad para
+                aplicar y fortalecer conocimientos relacionados con la programación, el diseño de interfaces y la
+                creación de software, integrando estos conocimientos en una solución tecnológica orientada a una
+                necesidad educativa.
+            </p>
+            <p>
+                Finalmente, el proyecto es <strong>viable</strong> porque cuenta con herramientas tecnológicas que
+                permiten llevar a cabo su desarrollo, como JavaScript para la programación de las funcionalidades y
+                Visual Studio Code como entorno de trabajo. Su elaboración se organizará en diferentes fases, que
+                comprenderán la investigación, la identificación de necesidades, el diseño de la aplicación, la
+                programación de las actividades y la evaluación de su funcionamiento. Asimismo, se realizarán
+                pruebas para identificar posibles errores, corregir fallas, mejorar la experiencia de uso y conocer
+                la percepción de los estudiantes frente a las actividades propuestas. De esta manera, se busca
+                desarrollar una aplicación funcional, accesible y adecuada para los estudiantes de sexto a octavo
+                grado, que contribuya a fortalecer su concentración y que pueda utilizarse como complemento de las
+                estrategias pedagógicas implementadas en el aula.
+            </p>
+            <p class="nota">
+                <span class="pendiente">Pendiente de confirmar</span>
+                La justificación habla de estudiantes de sexto a octavo grado; el título habla solo de grado sexto.
+            </p>
+            <a class="volver-arriba" href="#inicio">↑ Volver arriba</a>
+        </section>
+
+        <!-- =========================================
+             5. ANTECEDENTES
+             Cada antecedente es un <article> con los seis datos que pide la guía.
+             ========================================= -->
+        <section id="antecedentes">
+            <h2>Antecedentes</h2>
+
+            <article class="tarjeta">
+                <h3>Antecedente 1: «Uso de un videojuego de construcción ingenieril para desarrollar competencias cognitivas y tecnológicas»</h3>
+                <ul class="lista-datos">
+                    <li><strong>Autor o institución:</strong> <span class="pendiente">Pendiente de confirmar</span></li>
+                    <li><strong>Año:</strong> <span class="pendiente">Pendiente de confirmar</span></li>
+                    <li><strong>Lugar:</strong> Colombia</li>
+                    <li><strong>Propósito:</strong> explorar el uso del videojuego Crazy Machines 2 como herramienta
+                        pedagógica para fortalecer diferentes habilidades cognitivas y tecnológicas en estudiantes de
+                        educación media.</li>
+                    <li><strong>Metodología:</strong> investigación participativa o investigación-acción, con dos grupos
+                        de estudiantes de grado décimo dentro de un ambiente educativo.</li>
+                    <li><strong>Hallazgo:</strong> la experiencia permitió trabajar habilidades como la observación, la
+                        concentración, la toma de decisiones, la planeación, la solución de problemas y el trabajo en
+                        equipo, y promovió la experimentación.</li>
+                    <li><strong>Relación con Mente Activa:</strong> evidencia que el uso de videojuegos y actividades
+                        interactivas con fines educativos puede contribuir al fortalecimiento de la concentración y
+                        otras habilidades cognitivas, al mismo tiempo que aumenta la motivación y el interés de los
+                        estudiantes por aprender.</li>
+                    <li><strong>Fuente (referencia):</strong> <span class="pendiente">Pendiente de confirmar</span></li>
+                </ul>
+            </article>
+
+            <article class="tarjeta">
+                <h3>Antecedente 2</h3>
+                <ul class="lista-datos">
+                    <li><strong>Título:</strong> <span class="pendiente">Pendiente de confirmar</span></li>
+                    <li><strong>Autor o institución:</strong> <span class="pendiente">Pendiente de confirmar</span></li>
+                    <li><strong>Año:</strong> <span class="pendiente">Pendiente de confirmar</span></li>
+                    <li><strong>Propósito:</strong> <span class="pendiente">Pendiente de confirmar</span></li>
+                    <li><strong>Metodología:</strong> <span class="pendiente">Pendiente de confirmar</span></li>
+                    <li><strong>Hallazgo:</strong> <span class="pendiente">Pendiente de confirmar</span></li>
+                    <li><strong>Relación con Mente Activa:</strong> <span class="pendiente">Pendiente de confirmar</span></li>
+                    <li><strong>Fuente (referencia):</strong> <span class="pendiente">Pendiente de confirmar</span></li>
+                </ul>
+            </article>
+            <a class="volver-arriba" href="#inicio">↑ Volver arriba</a>
+        </section>
+
+        <!-- =========================================
+             6. CONCEPTOS (MARCO CONCEPTUAL)
+             Lista de definiciones <dl>: <dt> es el concepto y <dd> su explicación.
+             ========================================= -->
+        <section id="conceptos">
+            <h2>Conceptos</h2>
+            <p class="nota">
+                <span class="pendiente">Pendiente de confirmar</span>
+                La selección de estos tres conceptos, su definición y la fuente consultada. El texto que aparece
+                es el del anteproyecto y explica la relación de cada concepto con el proyecto.
+            </p>
+
+            <dl class="conceptos">
+                <dt>Concentración</dt>
+                <dd>
+                    <p><strong>Definición:</strong> <span class="pendiente">Pendiente de confirmar</span></p>
+                    <p><strong>Relación con el proyecto:</strong> es una de las principales capacidades que se busca
+                        fortalecer en los estudiantes. Comprender qué es la concentración permite diseñar actividades
+                        adecuadas para trabajarla y orientará la evaluación del proyecto.</p>
+                    <p><strong>Fuente:</strong> <span class="pendiente">Pendiente de confirmar</span></p>
+                </dd>
+
+                <dt>Gamificación</dt>
+                <dd>
+                    <p><strong>Definición:</strong> <span class="pendiente">Pendiente de confirmar</span></p>
+                    <p><strong>Relación con el proyecto:</strong> permite incorporar elementos de los juegos (retos,
+                        puntos, niveles o recompensas) dentro de una actividad educativa, para motivar a los
+                        estudiantes a participar y mantener su atención.</p>
+                    <p><strong>Fuente:</strong> <span class="pendiente">Pendiente de confirmar</span></p>
+                </dd>
+
+                <dt>Actividad interactiva</dt>
+                <dd>
+                    <p><strong>Definición:</strong> <span class="pendiente">Pendiente de confirmar</span></p>
+                    <p><strong>Relación con el proyecto:</strong> permite que los estudiantes participen activamente y
+                        tengan contacto directo con el juego, en lugar de limitarse a observar, practicando la
+                        memoria, la atención y la concentración mientras juegan.</p>
+                    <p><strong>Fuente:</strong> <span class="pendiente">Pendiente de confirmar</span></p>
+                </dd>
+            </dl>
+            <a class="volver-arriba" href="#inicio">↑ Volver arriba</a>
+        </section>
+
+        <!-- =========================================
+             7. METODOLOGÍA
+             ========================================= -->
+        <section id="metodologia">
+            <h2>Diseño metodológico</h2>
+
+            <h3>Línea de profundización</h3>
+            <p>
+                <strong>Diseño de Software.</strong> Se eligió porque permite diseñar y crear una herramienta digital
+                funcional, teniendo en cuenta su apariencia, organización, botones, juegos y facilidad de uso, y
+                realizar pruebas para identificar errores y mejorar la aplicación a partir de las opiniones de los
+                estudiantes.
+            </p>
+
+            <h3>Enfoque</h3>
+            <p><span class="pendiente">Pendiente de confirmar</span></p>
+
+            <h3>Población</h3>
+            <p>
+                Estudiantes del Colegio Brasilia, ya que la aplicación está dirigida a fortalecer la atención y
+                concentración durante las actividades académicas.
+            </p>
+            <p class="nota">
+                <span class="pendiente">Pendiente de confirmar</span>
+                Grados exactos de la población (sexto, o de sexto a octavo).
+            </p>
+
+            <h3>Muestra</h3>
+            <p>
+                Según el anteproyecto, se seleccionará una muestra de estudiantes de diferentes grados o edades,
+                teniendo en cuenta los permisos y espacios disponibles.
+            </p>
+            <p class="nota">
+                <span class="pendiente">Pendiente de confirmar</span>
+                Número de estudiantes y grados que formarán la muestra.
+            </p>
+
+            <h3>Instrumentos de recolección de información</h3>
+            <ul>
+                <li>Encuestas a los estudiantes.</li>
+                <li>Observaciones durante las actividades escolares.</li>
+                <li>Entrevistas a los docentes.</li>
+                <li>Ejercicios de diagnóstico relacionados con la memoria, la atención y el seguimiento de instrucciones.</li>
+            </ul>
+
+            <h3>Análisis de la información</h3>
+            <p>
+                Según el anteproyecto, la información se recopilará en el entorno escolar y posteriormente será
+                organizada y analizada para reconocer las necesidades de los estudiantes.
+            </p>
+            <p class="nota">
+                <span class="pendiente">Pendiente de confirmar</span>
+                Cómo se analizará la información (por ejemplo, tablas, gráficas o conteo de respuestas).
+            </p>
+
+            <!-- Diferencia entre lo planeado y lo que ya se hizo (lo pide la Actividad 4 de la guía) -->
+            <h3>Lo planeado y lo realizado</h3>
+            <div class="comparacion">
+                <div class="caja">
+                    <h4>Lo planeado</h4>
+                    <ul>
+                        <li>Construir el videojuego con JavaScript y Unity.</li>
+                        <li>Aplicar encuestas, observaciones, entrevistas y ejercicios de diagnóstico.</li>
+                        <li>Probar el juego con estudiantes y conocer sus opiniones.</li>
+                        <li>Evaluar si el juego ayuda a mejorar la concentración.</li>
+                    </ul>
+                </div>
+                <div class="caja">
+                    <h4>Lo realizado (comprobable)</h4>
+                    <ul>
+                        <li>Videojuego construido con HTML, CSS y JavaScript, sin Unity.</li>
+                        <li>Cinco juegos terminados, con tres niveles cada uno (15 niveles).</li>
+                        <li>Progreso guardado en el navegador, sin datos personales.</li>
+                        <li>Diseño adaptado a celulares.</li>
+                        <li>Aplicación de instrumentos y pruebas con estudiantes:
+                            <span class="pendiente">Pendiente de confirmar</span></li>
+                    </ul>
+                </div>
+            </div>
+            <a class="volver-arriba" href="#inicio">↑ Volver arriba</a>
+        </section>
+
+        <!-- =========================================
+             8. SEIS FASES
+             Tabla con fase, actividad, producto esperado y estado.
+             La actividad y el producto se tomaron de la descripción de fases del anteproyecto.
+             ========================================= -->
+        <section id="fases">
+            <h2>Seis fases metodológicas</h2>
+
+            <!-- Aviso solo para celular: en computador lo oculta estilos.css -->
+            <p class="aviso-tabla">Desliza la tabla hacia los lados <span aria-hidden="true">→</span></p>
+
+            <!-- El div permite mover la tabla de lado en celulares pequeños -->
+            <div class="tabla-contenedor">
+                <table>
+                    <caption>Fases del proyecto Mente Activa</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Fase</th>
+                            <th scope="col">Actividad</th>
+                            <th scope="col">Producto esperado</th>
+                            <th scope="col">Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1. Conceptualización</td>
+                            <td>Identificar y plantear el problema: reconocer la necesidad de fortalecer la atención y la concentración.</td>
+                            <td>Pregunta problemática y objetivos del proyecto.</td>
+                            <td><span class="estado realizada">Realizada</span></td>
+                        </tr>
+                        <tr>
+                            <td>2. Recolección de información</td>
+                            <td>Consultar información sobre atención, concentración, tecnología en la educación y gamificación; recoger información de estudiantes con encuestas u observaciones, si hay autorización.</td>
+                            <td>Información consultada y respuestas de encuestas u observaciones.</td>
+                            <td><span class="pendiente">Pendiente de confirmar</span></td>
+                        </tr>
+                        <tr>
+                            <td>3. Planeación y diseño</td>
+                            <td>Organizar la estructura de la aplicación, planear las actividades y desafíos, y hacer bocetos de pantallas, menú, botones e instrucciones.</td>
+                            <td>Estructura de la aplicación y bocetos de las pantallas.</td>
+                            <td><span class="pendiente">Pendiente de confirmar</span></td>
+                        </tr>
+                        <tr>
+                            <td>4. Construcción y ejecución</td>
+                            <td>Programar la estructura, la interfaz, el menú, los botones, las instrucciones y las actividades interactivas, y revisar el código.</td>
+                            <td>Videojuego Mente Activa: cinco juegos y quince niveles.</td>
+                            <td><span class="estado realizada">Realizada</span></td>
+                        </tr>
+                        <tr>
+                            <td>5. Evaluación</td>
+                            <td>Probar el funcionamiento, la claridad de las instrucciones y la facilidad de uso; identificar errores y mejoras; si es posible, recoger opiniones de estudiantes.</td>
+                            <td>Errores corregidos, mejoras identificadas y opiniones de estudiantes.</td>
+                            <td><span class="pendiente">Pendiente de confirmar</span></td>
+                        </tr>
+                        <tr>
+                            <td>6. Presentación y despliegue</td>
+                            <td>Organizar la versión disponible de la aplicación con las evidencias y la documentación; presentar el propósito, las etapas, las actividades y los resultados de las pruebas.</td>
+                            <td>Versión disponible de la aplicación, evidencias y documentación del proceso.</td>
+                            <td><span class="estado en-curso">En curso</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <a class="volver-arriba" href="#inicio">↑ Volver arriba</a>
+        </section>
+
+        <!-- =========================================
+             9. GALERÍA DE LOS CINCO JUEGOS
+             Datos tomados del README y del código de cada juego.
+             Los enlaces abren cada juego; no se carga ningún archivo del juego aquí.
+             ========================================= -->
+        <section id="juegos">
+            <h2>Los cinco juegos</h2>
+            <p class="nota">
+                <span class="pendiente">Pendiente de confirmar</span>
+                Capturas de pantalla propias de cada juego (se guardarán en la carpeta <code>imagenes</code>).
+            </p>
+
+            <div class="galeria">
+                <article class="juego juego-parejas">
+                    <div class="juego-icono" aria-hidden="true">🃏</div>
+                    <h3>Parejas</h3>
+                    <p><strong>Entrena:</strong> memoria.</p>
+                    <p><strong>Niveles:</strong> 3, 4 y 6 parejas.</p>
+                    <p>Encuentra todas las parejas de tarjetas iguales.</p>
+                    <a class="boton-juego" href="../juegos/parejas/parejas.html">Jugar Parejas</a>
+                </article>
+
+                <article class="juego juego-figuras">
+                    <div class="juego-icono" aria-hidden="true">🔺</div>
+                    <h3>Figuras</h3>
+                    <p><strong>Entrena:</strong> atención visual.</p>
+                    <p><strong>Niveles:</strong> 5, 8 y 10 figuras objetivo.</p>
+                    <p>Pulsa todas las figuras pedidas, por ejemplo: «Encuentra todos los triángulos».</p>
+                    <a class="boton-juego" href="../juegos/figuras/figuras.html">Jugar Figuras</a>
+                </article>
+
+                <article class="juego juego-secuencias">
+                    <div class="juego-icono" aria-hidden="true">🎨</div>
+                    <h3>Secuencias</h3>
+                    <p><strong>Entrena:</strong> memoria y concentración.</p>
+                    <p><strong>Niveles:</strong> secuencias de 3, 5 y 7 colores.</p>
+                    <p>Repite correctamente 3 secuencias de colores en el mismo orden.</p>
+                    <a class="boton-juego" href="../juegos/secuencias/secuencias.html">Jugar Secuencias</a>
+                </article>
+
+                <article class="juego juego-preguntas">
+                    <div class="juego-icono" aria-hidden="true">❓</div>
+                    <h3>Preguntas</h3>
+                    <p><strong>Entrena:</strong> conocimientos de Matemáticas, Ciencias naturales, Español y Cultura general.</p>
+                    <p><strong>Niveles:</strong> fácil, medio y difícil (10 preguntas cada uno).</p>
+                    <p>Responde las 10 preguntas con 7 aciertos o más.</p>
+                    <a class="boton-juego" href="../juegos/preguntas/preguntas.html">Jugar Preguntas</a>
+                </article>
+
+                <article class="juego juego-laberinto">
+                    <div class="juego-icono" aria-hidden="true">🧭</div>
+                    <h3>Laberinto mental</h3>
+                    <p><strong>Entrena:</strong> orientación espacial y planeación.</p>
+                    <p><strong>Niveles:</strong> laberintos de 7×7, 11×11 y 13×13 casillas.</p>
+                    <p>Lleva al personaje desde el inicio hasta la salida sin atravesar paredes.</p>
+                    <a class="boton-juego" href="../juegos/laberinto/laberinto.html">Jugar Laberinto</a>
+                </article>
+            </div>
+            <a class="volver-arriba" href="#inicio">↑ Volver arriba</a>
+        </section>
+
+        <!-- =========================================
+             10. ENCUESTA DE PERCEPCIÓN
+             El formulario NO guarda datos: no hay servidor. Lo explica script.js.
+             No se piden nombres ni datos personales.
+             ========================================= -->
+        <section id="encuesta">
+            <h2>Encuesta de percepción</h2>
+            <p>
+                Esta encuesta es una demostración. <strong>No pide tu nombre y no guarda tus respuestas.</strong>
+            </p>
+
+            <form id="encuestaForm" class="formulario">
+
+                <!-- Pregunta 1: lista desplegable -->
+                <div class="pregunta-encuesta">
+                    <label for="frecuencia" class="titulo-pregunta">1. ¿Con qué frecuencia te distraes durante las clases?</label>
+                    <select id="frecuencia" name="frecuencia" required>
+                        <option value="">Selecciona una opción</option>
+                        <option value="casi-nunca">Casi nunca</option>
+                        <option value="a-veces">A veces</option>
+                        <option value="casi-siempre">Casi siempre</option>
+                    </select>
+                </div>
+
+                <!-- Pregunta 2: opciones de selección única -->
+                <fieldset class="pregunta-encuesta">
+                    <legend>2. ¿Qué es lo que más te distrae?</legend>
+                    <label class="opcion"><input type="radio" name="distraccion" value="celular" required> Celular</label>
+                    <label class="opcion"><input type="radio" name="distraccion" value="ruido"> Ruido</label>
+                    <label class="opcion"><input type="radio" name="distraccion" value="cansancio"> Cansancio</label>
+                    <label class="opcion"><input type="radio" name="distraccion" value="otro"> Otro</label>
+                </fieldset>
+
+                <!-- Pregunta 3: lista desplegable con los cinco juegos -->
+                <div class="pregunta-encuesta">
+                    <label for="juegoFavorito" class="titulo-pregunta">3. ¿Qué juego de Mente Activa te gustó más?</label>
+                    <select id="juegoFavorito" name="juegoFavorito" required>
+                        <option value="">Selecciona un juego</option>
+                        <option value="parejas">Parejas</option>
+                        <option value="figuras">Figuras</option>
+                        <option value="secuencias">Secuencias</option>
+                        <option value="preguntas">Preguntas</option>
+                        <option value="laberinto">Laberinto mental</option>
+                    </select>
+                </div>
+
+                <!-- Pregunta 4: opciones de selección única -->
+                <fieldset class="pregunta-encuesta">
+                    <legend>4. ¿Las instrucciones de los juegos fueron fáciles de entender?</legend>
+                    <label class="opcion"><input type="radio" name="instrucciones" value="si" required> Sí</label>
+                    <label class="opcion"><input type="radio" name="instrucciones" value="mas-o-menos"> Más o menos</label>
+                    <label class="opcion"><input type="radio" name="instrucciones" value="no"> No</label>
+                </fieldset>
+
+                <!-- Pregunta 5: respuesta abierta -->
+                <div class="pregunta-encuesta">
+                    <label for="mejora" class="titulo-pregunta">5. ¿Qué mejorarías de Mente Activa?</label>
+                    <textarea id="mejora" name="mejora" rows="4" placeholder="Escribe tu idea aquí"></textarea>
+                </div>
+
+                <div class="botones-formulario">
+                    <button type="submit" class="boton">Comprobar respuestas</button>
+                    <button type="reset" class="boton boton-secundario">Limpiar</button>
+                </div>
+            </form>
+
+            <!-- Aquí script.js escribe el aviso. aria-live hace que los lectores de pantalla lo lean -->
+            <p id="aviso" class="mensaje" aria-live="polite"></p>
+            <a class="volver-arriba" href="#inicio">↑ Volver arriba</a>
+        </section>
+
+        <!-- =========================================
+             11. RECOMENDACIÓN INTERACTIVA
+             Los mensajes vienen de las reglas reales de los juegos (README).
+             ========================================= -->
+        <section id="recomendacion">
+            <h2>Recomendación</h2>
+            <p>Pulsa el botón para ver una recomendación para jugar Mente Activa.</p>
+            <button type="button" id="consejo" class="boton">💡 Ver recomendación</button>
+            <p id="respuesta" class="mensaje" aria-live="polite"></p>
+            <a class="volver-arriba" href="#inicio">↑ Volver arriba</a>
+        </section>
+
+        <!-- =========================================
+             12. AVANCE DEL PROYECTO
+             Solo hechos comprobables en el código. Los resultados de la
+             investigación todavía no existen y por eso no se publican.
+             ========================================= -->
+        <section id="avance">
+            <h2>Avance del proyecto</h2>
+
+            <h3>Avance del desarrollo (comprobable en el código)</h3>
+            <ul>
+                <li>Menú principal con el progreso general del estudiante (0 a 15 niveles).</li>
+                <li>Cinco juegos terminados: Parejas, Figuras, Secuencias, Preguntas y Laberinto mental.</li>
+                <li>Tres niveles por juego: quince niveles en total.</li>
+                <li>Solo se avanza de nivel después de completar el actual.</li>
+                <li>El progreso se guarda en el navegador y se conserva al cerrarlo. Solo se guardan números de nivel, ningún dato personal.</li>
+                <li>Opción para reiniciar el progreso, con confirmación antes de borrar.</li>
+                <li>Construido con HTML, CSS y JavaScript, sin instalar programas adicionales.</li>
+                <li>Diseño pensado para celulares.</li>
+            </ul>
+
+            <h3>Resultados de la investigación</h3>
+            <p>
+                <span class="pendiente">Pendiente de confirmar</span>
+                Los resultados se publicarán cuando se realicen las pruebas con estudiantes.
+            </p>
+            <a class="volver-arriba" href="#inicio">↑ Volver arriba</a>
+        </section>
+
+    </main>
+
+    <footer class="pie">
+        <p>Mente Activa · Colegio Brasilia Bosa · 2026</p>
+        <p>Anny Mishel Rodríguez Velarde y Laura Daniela Molina Vargas · Curso 1001</p>
+        <p><a href="../index.html">Ir al videojuego</a></p>
+    </footer>
+
+    <!-- JavaScript de esta página: botón de recomendación y encuesta -->
+    <script src="script.js"></script>
+</body>
+</html>

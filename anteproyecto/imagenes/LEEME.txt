@@ -1,0 +1,12 @@
+CARPETA DE IMÁGENES DEL ANTEPROYECTO
+
+Aquí se guardarán las imágenes de la página académica.
+
+Pendiente de confirmar:
+- Capturas de pantalla propias de los cinco juegos
+  (parejas.png, figuras.png, secuencias.png, preguntas.png, laberinto.png).
+- Escudo del colegio: solo si hay autorización para usarlo.
+
+Recuerden: usar solo imágenes propias o autorizadas,
+sin rostros ni datos personales de estudiantes.
+Cada imagen debe llevar un texto alternativo (alt) en index.html.
